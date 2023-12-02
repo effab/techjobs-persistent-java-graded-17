@@ -12,7 +12,11 @@ import java.util.List;
 @Entity
 public class Employer extends AbstractEntity {
 
-    @NotBlank(message = "Location is required")
+    @OneToMany
+    @JoinColumn(name="employer_id")
+    private final List<Job> jobs = new ArrayList<>();
+
+    @NotBlank(message = "Name is required")
     @Size(min=5, max=100)
     private String location;
 
