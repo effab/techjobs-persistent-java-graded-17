@@ -17,8 +17,10 @@ public class Employer extends AbstractEntity {
     private final List<Job> jobs = new ArrayList<>();
 
     @NotBlank(message = "Name is required")
-    @Size(min=5, max=100)
+    @Size(min=3, max=100)
     private String location;
+
+    public Employer() {}
 
     public String getLocation() {
         return location;
